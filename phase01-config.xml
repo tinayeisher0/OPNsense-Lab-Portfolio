@@ -1,0 +1,895 @@
+<?xml version="1.0"?>
+<opnsense>
+  <theme>opnsense</theme>
+  <sysctl version="1.0.0">
+    <item uuid="e9c7302e-7294-4e80-8639-201807798ca7">
+      <tunable>vfs.read_max</tunable>
+      <value>default</value>
+      <descr>Increase UFS read-ahead speeds to match the state of hard drives and NCQ.</descr>
+    </item>
+    <item uuid="a8016563-44bc-47c4-b242-617b51bf8517">
+      <tunable>net.inet.ip.portrange.first</tunable>
+      <value>default</value>
+      <descr>Set the ephemeral port range to be lower.</descr>
+    </item>
+    <item uuid="d2052f42-2184-4b79-81bb-fb843c7eb152">
+      <tunable>net.inet.tcp.blackhole</tunable>
+      <value>default</value>
+      <descr>Drop packets to closed TCP ports without returning a RST</descr>
+    </item>
+    <item uuid="b8ebbdf9-922f-4fd5-941c-6d843885cb3a">
+      <tunable>net.inet.udp.blackhole</tunable>
+      <value>default</value>
+      <descr>Do not send ICMP port unreachable messages for closed UDP ports</descr>
+    </item>
+    <item uuid="04dfa5cf-faed-40f5-bf09-7543ce6c3a33">
+      <tunable>net.inet.ip.random_id</tunable>
+      <value>default</value>
+      <descr>Randomize the ID field in IP packets</descr>
+    </item>
+    <item uuid="0fa51fb7-feba-44ef-a8e5-e3211573f8fc">
+      <tunable>net.inet.ip.sourceroute</tunable>
+      <value>default</value>
+      <descr>
+        Source routing is another way for an attacker to try to reach non-routable addresses behind your box.
+        It can also be used to probe for information about your internal networks. These functions come enabled
+        as part of the standard FreeBSD core system.
+      </descr>
+    </item>
+    <item uuid="da797a85-8406-4ee5-9ec0-79f7c2f4ca2a">
+      <tunable>net.inet.ip.accept_sourceroute</tunable>
+      <value>default</value>
+      <descr>
+        Source routing is another way for an attacker to try to reach non-routable addresses behind your box.
+        It can also be used to probe for information about your internal networks. These functions come enabled
+        as part of the standard FreeBSD core system.
+      </descr>
+    </item>
+    <item uuid="273b7bde-8c24-44eb-b8a5-70f55f3a3188">
+      <tunable>net.inet.icmp.log_redirect</tunable>
+      <value>default</value>
+      <descr>
+        This option turns off the logging of redirect packets because there is no limit and this could fill
+        up your logs consuming your whole hard drive.
+      </descr>
+    </item>
+    <item uuid="5e9ce2d3-3ef0-4a8e-b4c8-a3a0862a04c4">
+      <tunable>net.inet.tcp.drop_synfin</tunable>
+      <value>default</value>
+      <descr>Drop SYN-FIN packets (breaks RFC1379, but nobody uses it anyway)</descr>
+    </item>
+    <item uuid="5917bff2-49da-4784-8000-8e22719a4076">
+      <tunable>net.inet6.ip6.redirect</tunable>
+      <value>default</value>
+      <descr>Enable sending IPv6 redirects</descr>
+    </item>
+    <item uuid="aa741bbe-57d8-46c9-8f44-747fac57aecf">
+      <tunable>net.inet6.ip6.use_tempaddr</tunable>
+      <value>default</value>
+      <descr>Enable privacy settings for IPv6 (RFC 4941)</descr>
+    </item>
+    <item uuid="465465fe-afa8-4b79-ae68-a568cb297e22">
+      <tunable>net.inet6.ip6.prefer_tempaddr</tunable>
+      <value>default</value>
+      <descr>Prefer privacy addresses and use them over the normal addresses</descr>
+    </item>
+    <item uuid="c26b0714-0bd7-4072-90ad-fde2f6eaa29a">
+      <tunable>net.inet.tcp.syncookies</tunable>
+      <value>default</value>
+      <descr>Generate SYN cookies for outbound SYN-ACK packets</descr>
+    </item>
+    <item uuid="a848c510-0f3a-4872-bfd8-bd69a8843fdf">
+      <tunable>net.inet.tcp.recvspace</tunable>
+      <value>default</value>
+      <descr>Maximum incoming/outgoing TCP datagram size (receive)</descr>
+    </item>
+    <item uuid="58201cac-26c4-498f-87a9-9d84556c4bfe">
+      <tunable>net.inet.tcp.sendspace</tunable>
+      <value>default</value>
+      <descr>Maximum incoming/outgoing TCP datagram size (send)</descr>
+    </item>
+    <item uuid="a38d0ec5-fb65-46d7-b08a-7fbcf60c34d6">
+      <tunable>net.inet.tcp.delayed_ack</tunable>
+      <value>default</value>
+      <descr>Do not delay ACK to try and piggyback it onto a data packet</descr>
+    </item>
+    <item uuid="e33282bb-3cd2-4433-885d-992114a0707c">
+      <tunable>net.inet.udp.maxdgram</tunable>
+      <value>default</value>
+      <descr>Maximum outgoing UDP datagram size</descr>
+    </item>
+    <item uuid="456259d3-0524-4335-9cbd-6dd4ce259356">
+      <tunable>net.link.bridge.pfil_onlyip</tunable>
+      <value>default</value>
+      <descr>Handling of non-IP packets which are not passed to pfil (see if_bridge(4))</descr>
+    </item>
+    <item uuid="c19e93da-c2b0-4663-8e27-c61c6ee8b4ba">
+      <tunable>net.link.bridge.pfil_local_phys</tunable>
+      <value>default</value>
+      <descr>Set to 1 to additionally filter on the physical interface for locally destined packets</descr>
+    </item>
+    <item uuid="702bab5a-d438-4911-b248-91792a46bee2">
+      <tunable>net.link.bridge.pfil_member</tunable>
+      <value>default</value>
+      <descr>Set to 0 to disable filtering on the incoming and outgoing member interfaces.</descr>
+    </item>
+    <item uuid="7cf263ce-02f1-45d6-8777-9290f5b4e8db">
+      <tunable>net.link.bridge.pfil_bridge</tunable>
+      <value>default</value>
+      <descr>Set to 1 to enable filtering on the bridge interface</descr>
+    </item>
+    <item uuid="109e4b40-e866-4672-908e-8486b8c0433e">
+      <tunable>net.link.tap.user_open</tunable>
+      <value>default</value>
+      <descr>Allow unprivileged access to tap(4) device nodes</descr>
+    </item>
+    <item uuid="b5d03133-1b2b-487b-88a2-290d3d4188e4">
+      <tunable>kern.randompid</tunable>
+      <value>default</value>
+      <descr>Randomize PID's (see src/sys/kern/kern_fork.c: sysctl_kern_randompid())</descr>
+    </item>
+    <item uuid="471f6b08-cd8f-4be3-9bcb-3dd2d6fb30ec">
+      <tunable>hw.syscons.kbd_reboot</tunable>
+      <value>default</value>
+      <descr>Disable CTRL+ALT+Delete reboot from keyboard.</descr>
+    </item>
+    <item uuid="85ad0e25-b9f3-4761-b610-050f4e96dbe7">
+      <tunable>net.inet.tcp.log_debug</tunable>
+      <value>default</value>
+      <descr>Enable TCP extended debugging</descr>
+    </item>
+    <item uuid="db673574-9136-4e9b-a17b-243ff6b97322">
+      <tunable>net.inet.icmp.icmplim</tunable>
+      <value>default</value>
+      <descr>Set ICMP Limits</descr>
+    </item>
+    <item uuid="0a8c5334-4e73-4bee-a1e1-9148dd9c7751">
+      <tunable>net.inet.tcp.tso</tunable>
+      <value>default</value>
+      <descr>TCP Offload Engine</descr>
+    </item>
+    <item uuid="e9ac2353-87b5-45cf-955d-84c38c558ed6">
+      <tunable>net.inet.udp.checksum</tunable>
+      <value>default</value>
+      <descr>UDP Checksums</descr>
+    </item>
+    <item uuid="8e3e11f3-bd45-4426-b75f-43f89e278932">
+      <tunable>kern.ipc.maxsockbuf</tunable>
+      <value>default</value>
+      <descr>Maximum socket buffer size</descr>
+    </item>
+    <item uuid="ed4ecdbc-17c2-44e8-8b98-f5d41a741eb7">
+      <tunable>vm.pmap.pti</tunable>
+      <value>default</value>
+      <descr>Page Table Isolation (Meltdown mitigation, requires reboot.)</descr>
+    </item>
+    <item uuid="7fa3647a-b94c-4fd4-b227-594fb1f818f0">
+      <tunable>hw.ibrs_disable</tunable>
+      <value>default</value>
+      <descr>Disable Indirect Branch Restricted Speculation (Spectre V2 mitigation)</descr>
+    </item>
+    <item uuid="9f8bdc8d-7ae2-41ab-add7-4b4e2d67f43a">
+      <tunable>security.bsd.see_other_gids</tunable>
+      <value>default</value>
+      <descr>Hide processes running as other groups</descr>
+    </item>
+    <item uuid="203a836e-c902-45ff-a56c-2db274a48e11">
+      <tunable>security.bsd.see_other_uids</tunable>
+      <value>default</value>
+      <descr>Hide processes running as other users</descr>
+    </item>
+    <item uuid="ff648c8f-d5e2-4ab2-8044-152430015a84">
+      <tunable>net.inet.ip.redirect</tunable>
+      <value>default</value>
+      <descr>Enable/disable sending of ICMP redirects in response to IP packets for which a better,
+        and for the sender directly reachable, route and next hop is known.
+      </descr>
+    </item>
+    <item uuid="a3b5c215-c3fe-413e-8ecc-7d25e42abf5a">
+      <tunable>net.local.dgram.maxdgram</tunable>
+      <value>default</value>
+      <descr>Maximum outgoing UDP datagram size</descr>
+    </item>
+  </sysctl>
+  <system>
+    <optimization>normal</optimization>
+    <hostname>OPNsense</hostname>
+    <domain>localdomain</domain>
+    <dnsallowoverride>1</dnsallowoverride>
+    <group uuid="585429d5-6c04-4360-ace5-4a2a5a82a4df">
+      <gid>1999</gid>
+      <name>admins</name>
+      <scope>system</scope>
+      <description>System Administrators</description>
+      <priv>page-all</priv>
+      <member>0</member>
+    </group>
+    <user uuid="c8ad5c66-8edb-4626-94f2-3d3710bbe9a5">
+      <uid>0</uid>
+      <name>root</name>
+      <disabled>0</disabled>
+      <scope>system</scope>
+      <expires/>
+      <authorizedkeys/>
+      <otp_seed/>
+      <shell/>
+      <password>$2y$10$YRVoF4SgskIsrXOvOQjGieB9XqHPRra9R7d80B3BZdbY/j21TwBfS</password>
+      <landing_page/>
+      <comment/>
+      <email/>
+      <apikeys/>
+      <priv/>
+      <language/>
+      <descr>System Administrator</descr>
+      <dashboard/>
+    </user>
+    <nextuid>2000</nextuid>
+    <nextgid>2000</nextgid>
+    <timezone>Etc/UTC</timezone>
+    <timeservers>0.opnsense.pool.ntp.org 1.opnsense.pool.ntp.org 2.opnsense.pool.ntp.org 3.opnsense.pool.ntp.org</timeservers>
+    <webgui>
+      <protocol>https</protocol>
+      <ssl-certref>68606d75803a8</ssl-certref>
+    </webgui>
+    <disablenatreflection>yes</disablenatreflection>
+    <usevirtualterminal>1</usevirtualterminal>
+    <disableconsolemenu/>
+    <disablevlanhwfilter>1</disablevlanhwfilter>
+    <disablechecksumoffloading>1</disablechecksumoffloading>
+    <disablesegmentationoffloading>1</disablesegmentationoffloading>
+    <disablelargereceiveoffloading>1</disablelargereceiveoffloading>
+    <ipv6allow>1</ipv6allow>
+    <powerd_ac_mode>hadp</powerd_ac_mode>
+    <powerd_battery_mode>hadp</powerd_battery_mode>
+    <powerd_normal_mode>hadp</powerd_normal_mode>
+    <bogons>
+      <interval>monthly</interval>
+    </bogons>
+    <pf_share_forward>1</pf_share_forward>
+    <lb_use_sticky>1</lb_use_sticky>
+    <ssh>
+      <group>admins</group>
+    </ssh>
+    <rrdbackup>-1</rrdbackup>
+    <netflowbackup>-1</netflowbackup>
+    <firmware version="1.0.1">
+      <mirror/>
+      <flavour/>
+      <plugins/>
+      <type/>
+      <subscription/>
+      <reboot/>
+    </firmware>
+  </system>
+  <interfaces>
+    <wan>
+      <enable>1</enable>
+      <if>em1</if>
+      <mtu/>
+      <ipaddr>dhcp</ipaddr>
+      <ipaddrv6>dhcp6</ipaddrv6>
+      <subnet/>
+      <gateway/>
+      <blockpriv>1</blockpriv>
+      <blockbogons>1</blockbogons>
+      <dhcphostname/>
+      <media/>
+      <mediaopt/>
+      <dhcp6-ia-pd-len>0</dhcp6-ia-pd-len>
+    </wan>
+    <lan>
+      <enable>1</enable>
+      <if>em0</if>
+      <ipaddr>192.168.1.1</ipaddr>
+      <subnet>24</subnet>
+      <ipaddrv6>track6</ipaddrv6>
+      <subnetv6>64</subnetv6>
+      <media/>
+      <mediaopt/>
+      <track6-interface>wan</track6-interface>
+      <track6-prefix-id>0</track6-prefix-id>
+    </lan>
+    <lo0>
+      <internal_dynamic>1</internal_dynamic>
+      <descr>Loopback</descr>
+      <enable>1</enable>
+      <if>lo0</if>
+      <ipaddr>127.0.0.1</ipaddr>
+      <ipaddrv6>::1</ipaddrv6>
+      <subnet>8</subnet>
+      <subnetv6>128</subnetv6>
+      <type>none</type>
+      <virtual>1</virtual>
+    </lo0>
+  </interfaces>
+  <dhcpd>
+    <lan>
+      <enable/>
+      <range>
+        <from>192.168.1.100</from>
+        <to>192.168.1.199</to>
+      </range>
+    </lan>
+  </dhcpd>
+  <snmpd>
+    <syslocation/>
+    <syscontact/>
+    <rocommunity>public</rocommunity>
+  </snmpd>
+  <nat>
+    <outbound>
+      <mode>automatic</mode>
+    </outbound>
+  </nat>
+  <filter>
+    <rule>
+      <type>pass</type>
+      <ipprotocol>inet</ipprotocol>
+      <descr>Default allow LAN to any rule</descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <ipprotocol>inet6</ipprotocol>
+      <descr>Default allow LAN IPv6 to any rule</descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+    </rule>
+  </filter>
+  <rrd>
+    <enable/>
+  </rrd>
+  <ntpd>
+    <prefer>0.opnsense.pool.ntp.org</prefer>
+  </ntpd>
+  <revision>
+    <username>root@192.168.1.100</username>
+    <description>/api/diagnostics/netflow/setconfig made changes</description>
+    <time>1751121573.7453</time>
+  </revision>
+  <OPNsense>
+    <wireguard>
+      <client version="1.0.0">
+        <clients/>
+      </client>
+      <general version="0.0.1">
+        <enabled>0</enabled>
+      </general>
+      <server version="1.0.0">
+        <servers/>
+      </server>
+    </wireguard>
+    <IPsec version="1.0.3">
+      <general>
+        <enabled/>
+        <preferred_oldsa>0</preferred_oldsa>
+        <disablevpnrules>0</disablevpnrules>
+        <passthrough_networks/>
+      </general>
+      <charon>
+        <max_ikev1_exchanges/>
+        <threads>16</threads>
+        <ikesa_table_size>32</ikesa_table_size>
+        <ikesa_table_segments>4</ikesa_table_segments>
+        <init_limit_half_open>1000</init_limit_half_open>
+        <ignore_acquire_ts>1</ignore_acquire_ts>
+        <make_before_break/>
+        <retransmit_tries/>
+        <retransmit_timeout/>
+        <retransmit_base/>
+        <retransmit_jitter/>
+        <retransmit_limit/>
+        <syslog>
+          <daemon>
+            <ike_name>1</ike_name>
+            <log_level>0</log_level>
+            <app>1</app>
+            <asn>1</asn>
+            <cfg>1</cfg>
+            <chd>1</chd>
+            <dmn>1</dmn>
+            <enc>1</enc>
+            <esp>1</esp>
+            <ike>1</ike>
+            <imc>1</imc>
+            <imv>1</imv>
+            <job>1</job>
+            <knl>1</knl>
+            <lib>1</lib>
+            <mgr>1</mgr>
+            <net>1</net>
+            <pts>1</pts>
+            <tls>1</tls>
+            <tnc>1</tnc>
+          </daemon>
+        </syslog>
+      </charon>
+      <keyPairs/>
+      <preSharedKeys/>
+    </IPsec>
+    <Swanctl version="1.0.0">
+      <Connections/>
+      <locals/>
+      <remotes/>
+      <children/>
+      <Pools/>
+      <VTIs/>
+      <SPDs/>
+    </Swanctl>
+    <OpenVPNExport version="0.0.1">
+      <servers/>
+    </OpenVPNExport>
+    <OpenVPN version="1.0.1">
+      <Overwrites/>
+      <Instances/>
+      <StaticKeys/>
+    </OpenVPN>
+    <captiveportal version="1.0.2">
+      <zones/>
+      <templates/>
+    </captiveportal>
+    <cron version="1.0.4">
+      <jobs/>
+    </cron>
+    <DHCRelay version="1.0.1"/>
+    <Firewall>
+      <Lvtemplate version="0.0.1">
+        <templates/>
+      </Lvtemplate>
+      <Alias version="1.0.1">
+        <geoip>
+          <url/>
+        </geoip>
+        <aliases/>
+      </Alias>
+      <Category version="1.0.0">
+        <categories/>
+      </Category>
+      <Filter version="1.0.4">
+        <rules/>
+        <snatrules/>
+        <npt/>
+        <onetoone/>
+      </Filter>
+    </Firewall>
+    <Netflow version="1.0.1">
+      <capture>
+        <interfaces>lan,wan</interfaces>
+        <egress_only/>
+        <version>v9</version>
+        <targets/>
+      </capture>
+      <collect>
+        <enable>0</enable>
+      </collect>
+      <activeTimeout>1800</activeTimeout>
+      <inactiveTimeout>15</inactiveTimeout>
+    </Netflow>
+    <IDS version="1.1.0">
+      <rules/>
+      <policies/>
+      <userDefinedRules/>
+      <files/>
+      <fileTags/>
+      <general>
+        <enabled>0</enabled>
+        <ips>0</ips>
+        <promisc>0</promisc>
+        <interfaces>wan</interfaces>
+        <homenet>192.168.0.0/16,10.0.0.0/8,172.16.0.0/12</homenet>
+        <defaultPacketSize/>
+        <UpdateCron/>
+        <AlertLogrotate>W0D23</AlertLogrotate>
+        <AlertSaveLogs>4</AlertSaveLogs>
+        <MPMAlgo/>
+        <detect>
+          <Profile/>
+          <toclient_groups/>
+          <toserver_groups/>
+        </detect>
+        <syslog>0</syslog>
+        <syslog_eve>0</syslog_eve>
+        <LogPayload>0</LogPayload>
+        <verbosity/>
+        <eveLog>
+          <http>
+            <enable>0</enable>
+            <extended>0</extended>
+            <dumpAllHeaders/>
+          </http>
+          <tls>
+            <enable>0</enable>
+            <extended>0</extended>
+            <sessionResumption>0</sessionResumption>
+            <custom/>
+          </tls>
+        </eveLog>
+      </general>
+    </IDS>
+    <Interfaces>
+      <loopbacks version="1.0.0"/>
+      <neighbors version="1.0.0"/>
+      <vxlans version="1.0.2"/>
+    </Interfaces>
+    <Kea>
+      <ctrl_agent version="0.0.1">
+        <general>
+          <enabled>0</enabled>
+          <http_host>127.0.0.1</http_host>
+          <http_port>8000</http_port>
+        </general>
+      </ctrl_agent>
+      <dhcp4 version="1.0.3">
+        <general>
+          <enabled>0</enabled>
+          <interfaces/>
+          <valid_lifetime>4000</valid_lifetime>
+          <fwrules>1</fwrules>
+          <dhcp_socket_type>raw</dhcp_socket_type>
+        </general>
+        <ha>
+          <enabled>0</enabled>
+          <this_server_name/>
+          <max_unacked_clients>2</max_unacked_clients>
+        </ha>
+        <subnets/>
+        <reservations/>
+        <ha_peers/>
+      </dhcp4>
+    </Kea>
+    <monit version="1.0.13">
+      <general>
+        <enabled>0</enabled>
+        <interval>120</interval>
+        <startdelay>120</startdelay>
+        <mailserver>127.0.0.1</mailserver>
+        <port>25</port>
+        <username/>
+        <password/>
+        <ssl>0</ssl>
+        <sslversion>auto</sslversion>
+        <sslverify>1</sslverify>
+        <logfile/>
+        <statefile/>
+        <eventqueuePath/>
+        <eventqueueSlots/>
+        <httpdEnabled>0</httpdEnabled>
+        <httpdUsername>root</httpdUsername>
+        <httpdPassword/>
+        <httpdPort>2812</httpdPort>
+        <httpdAllow/>
+        <mmonitUrl/>
+        <mmonitTimeout>5</mmonitTimeout>
+        <mmonitRegisterCredentials>1</mmonitRegisterCredentials>
+      </general>
+      <alert uuid="a1c54fd8-6462-46e9-8d52-4b35233e0d41">
+        <enabled>0</enabled>
+        <recipient>root@localhost.local</recipient>
+        <noton>0</noton>
+        <events/>
+        <format/>
+        <reminder/>
+        <description/>
+      </alert>
+      <service uuid="76e1ea8d-ead2-44c5-bb7f-af7e6eb972f1">
+        <enabled>1</enabled>
+        <name>$HOST</name>
+        <description/>
+        <type>system</type>
+        <pidfile/>
+        <match/>
+        <path/>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>625e10af-b3ea-4158-90f2-11bb51eed3b1,5789ad33-12c1-4dc3-adc1-8fa9cc906349,8f28f46a-c43f-4243-9cbe-ff66754941da,d49eeeec-9be1-4853-b86d-17841b150fff</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="41920dac-7484-4b37-bd70-5dd28ec5fd4c">
+        <enabled>1</enabled>
+        <name>RootFs</name>
+        <description/>
+        <type>filesystem</type>
+        <pidfile/>
+        <match/>
+        <path>/</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>357e1879-ae46-433b-9b23-bbb15b204cfd</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="09539c7b-5ef9-47fc-98b5-89c1ae3a491e">
+        <enabled>0</enabled>
+        <name>carp_status_change</name>
+        <description/>
+        <type>custom</type>
+        <pidfile/>
+        <match/>
+        <path>/usr/local/opnsense/scripts/OPNsense/Monit/carp_status</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>e3627eab-61f3-40a7-b49f-0ce2d8f31962</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="d6c85f7a-96ee-4e8a-92a6-7a1897513efd">
+        <enabled>0</enabled>
+        <name>gateway_alert</name>
+        <description/>
+        <type>custom</type>
+        <pidfile/>
+        <match/>
+        <path>/usr/local/opnsense/scripts/OPNsense/Monit/gateway_alert</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>dc1e8203-533f-46b2-b231-9327b715fc73</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <test uuid="d6911e34-cd97-4729-91a0-e645c4c8499d">
+        <name>Ping</name>
+        <type>NetworkPing</type>
+        <condition>failed ping</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="f8a639bf-e636-4c04-9edc-c6937887a08d">
+        <name>NetworkLink</name>
+        <type>NetworkInterface</type>
+        <condition>failed link</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="5c1a8061-3a9f-4bcd-bd5a-43212acc8352">
+        <name>NetworkSaturation</name>
+        <type>NetworkInterface</type>
+        <condition>saturation is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="625e10af-b3ea-4158-90f2-11bb51eed3b1">
+        <name>MemoryUsage</name>
+        <type>SystemResource</type>
+        <condition>memory usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="5789ad33-12c1-4dc3-adc1-8fa9cc906349">
+        <name>CPUUsage</name>
+        <type>SystemResource</type>
+        <condition>cpu usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="8f28f46a-c43f-4243-9cbe-ff66754941da">
+        <name>LoadAvg1</name>
+        <type>SystemResource</type>
+        <condition>loadavg (1min) is greater than 6</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="d49eeeec-9be1-4853-b86d-17841b150fff">
+        <name>LoadAvg5</name>
+        <type>SystemResource</type>
+        <condition>loadavg (5min) is greater than 4.5</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="c98d1b62-e7cd-4eeb-813e-29e1decc684e">
+        <name>LoadAvg15</name>
+        <type>SystemResource</type>
+        <condition>loadavg (15min) is greater than 3</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="357e1879-ae46-433b-9b23-bbb15b204cfd">
+        <name>SpaceUsage</name>
+        <type>SpaceUsage</type>
+        <condition>space usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="e3627eab-61f3-40a7-b49f-0ce2d8f31962">
+        <name>ChangedStatus</name>
+        <type>ProgramStatus</type>
+        <condition>changed status</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="dc1e8203-533f-46b2-b231-9327b715fc73">
+        <name>NonZeroStatus</name>
+        <type>ProgramStatus</type>
+        <condition>status != 0</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+    </monit>
+    <Gateways version="1.0.0"/>
+    <Syslog version="1.0.2">
+      <general>
+        <enabled>1</enabled>
+        <loglocal>1</loglocal>
+        <maxpreserve>31</maxpreserve>
+        <maxfilesize/>
+      </general>
+      <destinations/>
+    </Syslog>
+    <TrafficShaper version="1.0.3">
+      <pipes/>
+      <queues/>
+      <rules/>
+    </TrafficShaper>
+    <trust>
+      <general version="1.0.1">
+        <store_intermediate_certs>0</store_intermediate_certs>
+        <install_crls>0</install_crls>
+        <fetch_crls>0</fetch_crls>
+        <enable_legacy_sect>1</enable_legacy_sect>
+        <enable_config_constraints>0</enable_config_constraints>
+        <CipherString/>
+        <Ciphersuites/>
+        <SignatureAlgorithms/>
+        <groups/>
+        <MinProtocol/>
+        <MinProtocol_DTLS/>
+      </general>
+    </trust>
+    <unboundplus version="1.0.11">
+      <general>
+        <enabled>1</enabled>
+        <port>53</port>
+        <stats/>
+        <active_interface/>
+        <dnssec/>
+        <dns64/>
+        <dns64prefix/>
+        <noarecords/>
+        <regdhcp/>
+        <regdhcpdomain/>
+        <regdhcpstatic/>
+        <noreglladdr6/>
+        <noregrecords/>
+        <txtsupport/>
+        <cacheflush/>
+        <local_zone_type>transparent</local_zone_type>
+        <outgoing_interface/>
+        <enable_wpad/>
+      </general>
+      <advanced>
+        <hideidentity/>
+        <hideversion/>
+        <prefetch/>
+        <prefetchkey/>
+        <dnssecstripped/>
+        <aggressivensec>1</aggressivensec>
+        <serveexpired/>
+        <serveexpiredreplyttl/>
+        <serveexpiredttl/>
+        <serveexpiredttlreset/>
+        <serveexpiredclienttimeout/>
+        <qnameminstrict/>
+        <extendedstatistics/>
+        <logqueries/>
+        <logreplies/>
+        <logtagqueryreply/>
+        <logservfail/>
+        <loglocalactions/>
+        <logverbosity>1</logverbosity>
+        <valloglevel>0</valloglevel>
+        <privatedomain/>
+        <privateaddress>0.0.0.0/8,10.0.0.0/8,100.64.0.0/10,169.254.0.0/16,172.16.0.0/12,192.0.2.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,233.252.0.0/24,::1/128,2001:db8::/32,fc00::/8,fd00::/8,fe80::/10</privateaddress>
+        <insecuredomain/>
+        <msgcachesize/>
+        <rrsetcachesize/>
+        <outgoingnumtcp/>
+        <incomingnumtcp/>
+        <numqueriesperthread/>
+        <outgoingrange/>
+        <jostletimeout/>
+        <discardtimeout/>
+        <cachemaxttl/>
+        <cachemaxnegativettl/>
+        <cacheminttl/>
+        <infrahostttl/>
+        <infrakeepprobing/>
+        <infracachenumhosts/>
+        <unwantedreplythreshold/>
+      </advanced>
+      <acls>
+        <default_action>allow</default_action>
+      </acls>
+      <dnsbl>
+        <enabled>0</enabled>
+        <safesearch/>
+        <type/>
+        <lists/>
+        <whitelists/>
+        <blocklists/>
+        <wildcards/>
+        <address/>
+        <nxdomain/>
+      </dnsbl>
+      <forwarding>
+        <enabled/>
+      </forwarding>
+      <dots/>
+      <hosts/>
+      <aliases/>
+    </unboundplus>
+  </OPNsense>
+  <hasync version="1.0.2">
+    <disablepreempt>0</disablepreempt>
+    <disconnectppps>0</disconnectppps>
+    <pfsyncinterface/>
+    <pfsyncpeerip/>
+    <pfsyncversion>1400</pfsyncversion>
+    <synchronizetoip/>
+    <verifypeer>0</verifypeer>
+    <username/>
+    <password/>
+    <syncitems/>
+  </hasync>
+  <openvpn/>
+  <ifgroups version="1.0.0"/>
+  <gifs version="1.0.0">
+    <gif/>
+  </gifs>
+  <gres version="1.0.0">
+    <gre/>
+  </gres>
+  <laggs version="1.0.0">
+    <lagg/>
+  </laggs>
+  <virtualip version="1.0.0">
+    <vip/>
+  </virtualip>
+  <vlans version="1.0.0">
+    <vlan/>
+  </vlans>
+  <staticroutes version="1.0.0"/>
+  <bridges>
+    <bridged/>
+  </bridges>
+  <ppps>
+    <ppp/>
+  </ppps>
+  <wireless>
+    <clone/>
+  </wireless>
+  <ca/>
+  <dhcpdv6/>
+  <cert>
+    <refid>68606d75803a8</refid>
+    <descr>Web GUI TLS certificate</descr>
+    <crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUhIakNDQlFhZ0F3SUJBZ0lVZTRKSExCbVVoblJEWGV6WG9mY2VSVmM2SFpRd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2dZa3hIVEFiQmdOVkJBTU1GRTlRVG5ObGJuTmxMbXh2WTJGc1pHOXRZV2x1TVFzd0NRWURWUVFHRXdKTwpUREVWTUJNR0ExVUVDQXdNV25WcFpDMUliMnhzWVc1a01SVXdFd1lEVlFRSERBeE5hV1JrWld4b1lYSnVhWE14CkxUQXJCZ05WQkFvTUpFOVFUbk5sYm5ObElITmxiR1l0YzJsbmJtVmtJSGRsWWlCalpYSjBhV1pwWTJGMFpUQWUKRncweU5UQTJNamd5TWpNeU1qUmFGdzB5TmpBM016QXlNak15TWpSYU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1egpaVzV6WlM1c2IyTmhiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzCmJHRnVaREVWTUJNR0ExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnoKWld4bUxYTnBaMjVsWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1V3Z2dJaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQwpEd0F3Z2dJS0FvSUNBUURNdTd1SVBLZERhSFBPWXFyYnNrWkhiNTdPSVNWK3VqWHRFRys4OGdWR0pmQ3JMNTRPCkszRktOcmlydUx2dWY2ZnhDZENtNk5GSkJSOVJORUEySlhpaFRjbjE4VzRBTXNXU0R0RlZDWHpZem9CN0F0WHQKZnREeUlTLzZGMTlFRWxvajQxM1dYNGlkeHg5b1hFY0QxYXdDR0pJbEhjQ0U3c1plNy8xc3A1TEJ3YlRlWm5mQgpiR3Y4ZUdXNXJlUDZBbUtaOFZSSXUyR0JXS3N0VTBGQ1hXeFhaMitBVmMvR2JPR0wzcGJNMnRaV096KzVadFFTCitxaFR2THpFaWFSQmNpeWx5clkydmtoL0tOSjB5c0xBWDZiZjhSNndaQ25jcmhkWWJqK2FnQWluaWh1a3R5dVoKN3VhRDQ4V3MxWVZ0ZVRoRTM0RktCUW5xbzhIWFJZM1kvclo1Sms4ZHptblFJa0N2N1pCQy9uSXM1enZiMndYbgpVbWtabWk4NkJZYkw3bi9RZ0xXb2NHQmtMamNMTW1kWHJmRVNTUmk2MjF1M0ZkNTJNU3dCZm16M1EydjdFQzR1CkJwMGhRQVk2ZjVlMXpJVDVJQXN3d2dnT1F6cS9pSGF5Q1NlYTZqQVpNVk4vWHpjdWE4aGcySkxWWWtWRTZBTnMKcjJPaGYzY0crYnVPZDVzNnp5dGlGd0QyU1lWYW9WVnhRRUM4RmxXZldnZVdQWUlUMnBucnRoczk4d0lGNHFpawpkYmtmM1p5bGZSb0FvNjhSdU1RdXY1TDhnQnNRM2ttY3dsTWV4a1orYk9uOFlIMnNiY05LaGQrS1hjT2hwUUc4CkVyOXNINENLZC9LODhtMEQzZGJFWmwxL2MrZ2RFMG9UTk9mOWxyVXgwczB2UDRnMWRsK2dVNUN5dHdJREFRQUIKbzRJQmVqQ0NBWFl3Q1FZRFZSMFRCQUl3QURBUkJnbGdoa2dCaHZoQ0FRRUVCQU1DQmtBd05BWUpZSVpJQVliNApRZ0VOQkNjV0pVOVFUbk5sYm5ObElFZGxibVZ5WVhSbFpDQlRaWEoyWlhJZ1EyVnlkR2xtYVdOaGRHVXdIUVlEClZSME9CQllFRlBKc29VVCtCeVNLL0FHL2xldjhoUjRUd1VvTk1JR3pCZ05WSFNNRWdhc3dnYWloZ1kra2dZd3cKZ1lreEhUQWJCZ05WQkFNTUZFOVFUbk5sYm5ObExteHZZMkZzWkc5dFlXbHVNUXN3Q1FZRFZRUUdFd0pPVERFVgpNQk1HQTFVRUNBd01XblZwWkMxSWIyeHNZVzVrTVJVd0V3WURWUVFIREF4TmFXUmtaV3hvWVhKdWFYTXhMVEFyCkJnTlZCQW9NSkU5UVRuTmxibk5sSUhObGJHWXRjMmxuYm1Wa0lIZGxZaUJqWlhKMGFXWnBZMkYwWllJVWU0SkgKTEJtVWhuUkRYZXpYb2ZjZVJWYzZIWlF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQ0FJQwpNQXNHQTFVZER3UUVBd0lGb0RBZkJnTlZIUkVFR0RBV2doUlBVRTV6Wlc1elpTNXNiMk5oYkdSdmJXRnBiakFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQWdFQWZobllHd0VOOEFsTlFjb1RVOUkvVXpKd2pjRkRKQWhXZTJDVXpsQ3oKdGRWRWVSL1FQUzJLdStYOHlmSXBXK2RtNG9sUmtVOS9rQ3B3d2Z3am9Fc0Z0LzB2VGZSejEvU3JmWERDbkdTZQpiOG5TaWZBRWgyc09weEFQYVJhSGxHcFF3c0Mxc0d0elBJQlhrYnhSdGRmalVUcGVrMkh2amZJV1Z6U0Evb3BSCndGcTA0Yno5ODVtZXJlZVp2azUzY05wcDJFR3ZPV2hrcmZLT2FPSi9kMlhDRlA3TmMrd1hLWVNkWFdDSTk5d0QKVHhJOG8waHQyc2owV0I4bzFSOENaOTlGWE9Hdy9OZ3graENqS2VGbHQ0dkhiR0xDZjNmRXpkamo5UkJlMDlmQwp5a0pRbjdscEtrWVY2akdQckwrTlJLQjZ6YzJGdFcxSnZ6Y0xmVDhicUM5aUtMR2lwV2tTZFpjY2hKVWpRYWg0CkRjQktwMGhmL0QyYU5XZngzM0VOQkZTT3RRRWYrS3Zlak5vazQwQmd2T1oweG5nYnF4S2pHRDdqbWxqNzN5MTMKZ2l3dk5HdTNiZnB5OUlrN2lUKzNGVnJBRktvYzJyeXlDN2YxM2JvUWNtTTZ2anhFOW9Qd3FmYmlzeHhVOHAxZwpPaFBIc0tVNk5Ld2phbXpnNityUFlGOG5oTVY5NncwQnF0REx0bWoyWWFGOGxKTDJlek5UZis5ZWFPTkFNbjBlCmQ1UjhiNElwZGJOY01ORDFVYWlxT2t6a0J2eXBBWmdTNDJnOVRQY3hYU0NPQkRReU9KbWQ0aVJUb3QvcFd0cEYKQ1lZVW4ybnhGUWk2RVNFcWlCSUMyUEJEa0cyRmo1QUxrRW8ySlA5VE5vbU5tQmlXSXZCTTViN2g3WUVuSENSSwpuT1U9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</crt>
+    <prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUpRd0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQ1Mwd2dna3BBZ0VBQW9JQ0FRRE11N3VJUEtkRGFIUE8KWXFyYnNrWkhiNTdPSVNWK3VqWHRFRys4OGdWR0pmQ3JMNTRPSzNGS05yaXJ1THZ1ZjZmeENkQ202TkZKQlI5UgpORUEySlhpaFRjbjE4VzRBTXNXU0R0RlZDWHpZem9CN0F0WHRmdER5SVMvNkYxOUVFbG9qNDEzV1g0aWR4eDlvClhFY0QxYXdDR0pJbEhjQ0U3c1plNy8xc3A1TEJ3YlRlWm5mQmJHdjhlR1c1cmVQNkFtS1o4VlJJdTJHQldLc3QKVTBGQ1hXeFhaMitBVmMvR2JPR0wzcGJNMnRaV096KzVadFFTK3FoVHZMekVpYVJCY2l5bHlyWTJ2a2gvS05KMAp5c0xBWDZiZjhSNndaQ25jcmhkWWJqK2FnQWluaWh1a3R5dVo3dWFENDhXczFZVnRlVGhFMzRGS0JRbnFvOEhYClJZM1kvclo1Sms4ZHptblFJa0N2N1pCQy9uSXM1enZiMndYblVta1ptaTg2QlliTDduL1FnTFdvY0dCa0xqY0wKTW1kWHJmRVNTUmk2MjF1M0ZkNTJNU3dCZm16M1EydjdFQzR1QnAwaFFBWTZmNWUxeklUNUlBc3d3Z2dPUXpxLwppSGF5Q1NlYTZqQVpNVk4vWHpjdWE4aGcySkxWWWtWRTZBTnNyMk9oZjNjRytidU9kNXM2enl0aUZ3RDJTWVZhCm9WVnhRRUM4RmxXZldnZVdQWUlUMnBucnRoczk4d0lGNHFpa2Ria2YzWnlsZlJvQW82OFJ1TVF1djVMOGdCc1EKM2ttY3dsTWV4a1orYk9uOFlIMnNiY05LaGQrS1hjT2hwUUc4RXI5c0g0Q0tkL0s4OG0wRDNkYkVabDEvYytnZApFMG9UTk9mOWxyVXgwczB2UDRnMWRsK2dVNUN5dHdJREFRQUJBb0lDQUVxNnJhRjFUakpYSW9vdlRxRkJpZENTCmFCdGlVdTdXWmsraFE3L3FjVTFoRk45UFVyaG1XQVJZUkFEK1BhNjQ3dUtYREErWWhLZk1GRm5PSWpBQmJtNG0KV0RVTENuVk5FdnVVcUFrTG5RUUFJRHFHVnZMSTZ0aXVqM1lRYU9nT2NOT1BydFZNYXEvNG1qaThFZm5PMk9tcwo4VTlWOUVzeFlyd05pbW5LSXRIUmRFVUhqdWZOdlA3YkxYcGdoQW5pSy81MzdhVmNyQ01MNi9OdjQ2Nm5MaUFiCk04SmEwQ3ZqMjFIMERnUTVUcW9NRjE4RHJ4NDhXd3V4cFE5eUZFQUZQbEhIMDhuWW05cTZXbE5pSFVNZHh1b1AKOTMwNEdtV2dNQXBKdDdLYjBFempKdUx4THh1UmJaZXZvSnhORmRaWFBGZzdZdFJUVVlMUmdqUWpBYnMyZ2dEQQpPTVVRQUJFRklkVUY3QzlTSkxjOTFZUzViYWlpNGVEYlJBck1kaFJVNWI0TjFmdnB4T2RYUzFPVW9nc3NZc1lmCkhkcnM5Mi92a1pneVJxemxESGpIOGZpUVZITmRPSzltMVdQaXpKcWF2bWl3cS9MQnJnVEg3Z1RpMFdwcEwzeEcKNzhBQis4YUVyaGNwNjNybU40R3Nkd1hFdFkrU3ptUEdmZVB1bkhWYzhzZUcyY0JrczM5Q005dis0bHljMDBpagowRFg5bC8rVjRMU1lHcWUvalhKNDZiK1lROGFrUGFQMEZJQUtVVHZCeFY4S0tqa1dUUE5qKzVqSGhQL24yWE5JClRVWEJNV3VackR4R3ZnRUJycUFoS2xiZTZPL1R0bXI1QTM4S3U5anNlMnhXN2h2anVkOUFselFESlduMXo2UGsKYU1yL3hNK2F2S3ptWUhoVUg0WXhBb0lCQVFEeWVHQUhsNkZQNjRVUUdoQkpxMitBRnM2Qys0MFh5dFFtdnEwdQptMkRBL0NNWm9uekl3aFFFVWxPaElOV3NVdGc2NFRnWE1kOVpvdk9qWHptUFBXaE8zSGN2TDREeUFZVE0ydkxiCmU3TVVDbVVIMHdkQjRwUFZydlFtOFJhWUVFZi9vU29EU0J5cldCdVVuS1Y3N0o1TnMrU05ZTTFyYTVJUWFNdmgKUzVSQzVCb2JVR2JRRHhHbDhjVW1oTUVRV0ZKNU11UWN4aDJiMHhoYUlkN2hMSkY3RjhBT2U3SDRTNkFqL1F4cgp2aTZNMXpRYndvY2Y2WXM4RjZLRUpMWjBDaUVkT0NtM0xFTHYvQmlNNVlXeEZKRWxUMDY3TzRrYldXMERjRjdjCnp0dmNoWHEralFSd3lLRkZKOWpLM0JrKzdKUkYzN3BjUTZvaGpwNjg3ODA1R2k3bkFvSUJBUURZS0V1ekJZVEMKWGd4VW0wVjZqYklpTGk0V0U1dlViQ2g5bk5mN05IVzBBRitzOGhnblVzcFBkYmgrWFQ3Z0lMVHhxT0RsQzdsUwpNZFBWb0NSNjN1bVdzWTA5V0VDWjV1Z2h3NERmSGxnNUpuUVFTeGE2ZlN4cHpYajYxZzMyOENFaUJsbDNZcVdlCjRsMjBOUG1HbXk3VEJmMXZuMy9qdnN6VlR1cjdsTjhrYzkrVTNhQ3FwZTdmZTdJV2lzVFc0RjJDV2RvNlllbFMKVFArTWtlS3ljdzcyZGNON2VlWUowMFVOQXVjY2w2MytFVWJkSk9TRzBVc2RiRjVyNDg2NTdlM08rZ3oyQUxWVgptcHFqQUpXSElTSjZTcGtCcHRYV3dCZUd0Z04yS3NUNVhyenp0TUg5TVdWbmFyZHJJQTBTVnlZM084VXU2YmFiClFFV1d6cjhKWi9PeEFvSUJBRUVxMVRSMUxtZmFkd0xpM21uT1o4TlhYZDJhV2t1QXVoQkh3eWY1bnNGL2dyZUwKRWxxcXZ0S0NoZk9TYlp0SkVOQ1NZNDdvV28wdTNLaVdHVlJFUHRxakttMUdLVFBoOEoxV1kxdFdIY1ZQSGVSQwpkWHJodUxYL3RhTVp2T2JWeVdRTkhzdVBBQldWTXFSNGpZbUhDT3o5WW5vVkFHRFVvb2RDZ3psa0pNN3RtNDZuCngxbzRFcGcxS0xXM2pHUW1PTlJXTnpUOGtreWxLYkJmMWhWUzh5N1FMVkEzTXBmM1MyMGd2OHZkYTRseTlaQlkKY2hURG9pWmVlOUZrUkoxZmM1TDAyMUZkMWdmR0M1c2l2UkhnNHpuUjNPazVrUm9HcU9QNXVhVkMrNWlEVDRBVApTcFE5ZUFxc01Qb2t1YXhOelhRU00zWkV3VjhQZzk1bjNSSngxUlVDZ2dFQkFNQmRJL2orZVVaTVVpYmRRN2lyCjd4SXlETHVDMmRQeUtScVlnVEZDWDFsQVYrVGVVaFowdkN4NHRDWm9yekxnaUlialpya1BkTzRyLzd3R1YxQ3QKbmkySWR3eFh4SzN4NnpWWStoQVZ2aWVtQy9ZUURQc0x1SUd6NU8wOW41SFo0M0tYT2ZsZjVjcCs0eXNqVmNpdgp3N3p5Z0xkY3Q0Q2paVUNUaWRVNGlGaTFjZ3pXSzB5U2ZRR1A0RTNsVXdWekNHU2Z0L0RxLzZ4SmI4YldjV3VqCnIzWXdHVGFDcGZDcWZySDBtbDQ4c2cvL3FoUFY2RFgrZmgyQ09vbERZODdkYWh3Zk5YZWI2OFJ4NFJvY3cvVk0KekpVT1hCbzNNZWg2YkxWcXQ2dnFwZjdTaTg5S1ZyVVB4NUdBVEJqZW5pTnJRVXc0T2VQbEE2Z29TNFhKR2dPeAo2aEVDZ2dFQkFKWlRQNFkwM0l1Qy9pblJHMUZrWXc1bmtsR2o0Rit6SjlzWFFHL1FJS2l2ZU9nTVc4WGhJaVR6CkpQdWJITDBDR0VrR1pVN2I1NEM2Z2JTaWYrVHFMQ1RqbDdHZ2pNcUszVk9DS2NPeGhVN2pwRFZFZFdwYnZjcXEKOXRpWHdaVDkvZzdvSkEvd1ZzZjFJNWhCN2VDdnhNL3VrbEJTbk1zdkJmZnBRN01ncjE2enIyZ1dGT0dMNWVRUQpJTFI2aU5EbWZZditXN3Mrb054d1JLamZoZ3lSTnEwdVdZUGNncTI1SUl5Slp3elhnSWM1cEhzQzJkWXFnbm5lCnZQd2o5NjV1RzEwZ25zQjVUZlYveUpDdFk0MHhEVDU1aDdGMkRycHlRWnJyWERQR2ZiOXN5QnMrWm9VOWRMU0MKODVWbldUcUp4WUp5U3I1L1RRb0IrQjY2QlVFQVppWT0KLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLQo=</prv>
+  </cert>
+</opnsense>
